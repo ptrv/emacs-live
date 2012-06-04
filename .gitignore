@@ -25,3 +25,4 @@ tramp
 tmp/*
 elpa/*
 var/*
+swank/*
