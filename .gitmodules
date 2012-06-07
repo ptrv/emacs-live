@@ -36,6 +36,7 @@
 [submodule "packs/dev/lang-pack/vendor/submodules/actionscript-mode"]
         path = packs/dev/lang-pack/vendor/submodules/actionscript-mode
         url = git://github.com/austinhaas/actionscript-mode.git
+        ignore = untracked
 [submodule "packs/dev/lang-pack/vendor/submodules/scel"]
         path = packs/dev/lang-pack/vendor/submodules/scel
         url = git://github.com/samaaron/scel.git
@@ -46,21 +47,27 @@
 [submodule "packs/dev/power-pack/vendor/submodules/scratch"]
         path = packs/dev/power-pack/vendor/submodules/scratch
         url = git://github.com/ieure/scratch-el.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/yasnippet"]
         path = packs/dev/power-pack/vendor/submodules/yasnippet
         url = git://github.com/capitaomorte/yasnippet.git
 [submodule "packs/dev/foundation-pack/vendor/submodules/elisp-slime-nav"]
         path = packs/dev/foundation-pack/vendor/submodules/elisp-slime-nav
         url = git://github.com/purcell/elisp-slime-nav.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/gist"]
         path = packs/dev/power-pack/vendor/submodules/gist
         url = git://github.com/defunkt/gist.el.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/gh"]
         path = packs/dev/power-pack/vendor/submodules/gh
         url = git://github.com/sigma/gh.el.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/pcache"]
 	path = packs/dev/power-pack/vendor/submodules/pcache
 	url = git://github.com/sigma/pcache.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/logito"]
 	path = packs/dev/power-pack/vendor/submodules/logito
 	url = git://github.com/sigma/logito.git
+        ignore = untracked
