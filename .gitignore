@@ -23,6 +23,7 @@ session*
 tramp
 \#*
 tmp/*
+.smex-items
 elpa/*
 var/*
 swank/*
