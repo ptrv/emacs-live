@@ -56,7 +56,7 @@
   "Returns a list of absolute directories of all the registered packs"
   (mapcar (lambda (pack-name) (live-pack-dir pack-name)) live-packs))
 
-(defun byte-recompile-directory-sl (directory &optional arg force follow-symlinks?)
+(defun live-byte-recompile-directory-sl (directory &optional arg force follow-symlinks?)
   "Recompile every `.el' file in DIRECTORY that needs recompilation.
 This happens when a `.elc' file exists but is older than the `.el' file.
 Files in subdirectories of DIRECTORY are processed also.
@@ -113,7 +113,7 @@ children of DIRECTORY."
                         (not (auto-save-file-name-p source))
                         (not (string-equal dir-locals-file
                                            (file-name-nondirectory source))))
-                   (progn (case (byte-recompile-file source force arg)
+                   (progn (case (live-byte-recompile-file source force arg)
                             (no-byte-compile (setq skip-count (1+ skip-count)))
                             ((t) (setq file-count (1+ file-count)))
                             ((nil) (setq fail-count (1+ fail-count))))
@@ -135,7 +135,7 @@ children of DIRECTORY."
   "Byte-recompile all registered packs"
   (interactive)
   (mapcar (lambda (pack-dir)
-            (byte-recompile-directory-sl pack-dir 0 1 1))
+            (live-byte-recompile-directory-sl pack-dir 0 1 1))
           (live-pack-dirs)))
 
 (defun live-user-first-name ()
@@ -147,21 +147,20 @@ children of DIRECTORY."
 (defun live-user-first-name-p ()
   (not (string-equal "" (live-user-first-name))))
 
-(buffer-list)
-
-(buffer-file-name (car (buffer-list)))
-
 (defun live-filter (condp lst)
     (delq nil
-          (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
+          (mapcar (lambda (x) (when (funcall condp x) x)) lst)))
+
+(defun live-list-buffer-paths ()
+  (mapcar (lambda (el) (buffer-name el)) (buffer-file-name)))
+
+(defun live-list-buffer-names ()
+  (live-filter 'identity (mapcar (lambda (el) (buffer-name el)) (buffer-list))))
 
 (defun live-file-open-as-buffer-p (path)
-  (if (member (file-truename path) (mapcar (lambda (b) (buffer-file-name b)) (buffer-list)))
+  (if (member (file-truename path) (live-list-buffer-paths))
       t
     nil))
 
-(defun live-find-buffer-by-path (path)
-  )
-
-(defun live-list-buffer-paths ()
-(file-truename "~/.overtone/log/overtone.log"))
+(defun live-empty-p (seq)
+  (eq 0 (length seq)))
