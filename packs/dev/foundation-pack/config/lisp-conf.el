@@ -1,3 +1,7 @@
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 (dolist (x '(scheme emacs-lisp lisp))
@@ -5,12 +9,11 @@
   (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'rainbow-delimiters-mode))
 
 (defun live-lisp-describe-thing-at-point ()
-          "Show the documentation of the Elisp function and variable near point.
-        This checks in turn:
-        -- for a function name where point is
-        -- for a variable name where point is
-        -- for a surrounding function call
-        "
+  "Show the documentation of the Elisp function and variable near point.
+   This checks in turn:
+     -- for a function name where point is
+     -- for a variable name where point is
+     -- for a surrounding function call"
           (interactive)
           (let (sym)
             ;; sigh, function-at-point is too clever.  we want only the first half.
