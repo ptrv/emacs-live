@@ -45,7 +45,7 @@ in the sexp, not the end of the current one."
              (paredit-forward-up)
              (paredit-backward-down)
              (paredit-forward-slurp-sexp)
-             (live-delete-horizontal-space-except-one)))))
+             (live-delete-whitespace-except-one)))))
   (when (not (save-excursion
                (ignore-errors
                  (backward-sexp)
@@ -71,3 +71,15 @@ in the sexp, not the end of the current one."
              (end-of-defun)
              (beginning-of-defun)
              (indent-sexp)))))
+
+(defun live-paredit-forward-kill-sexp (&optional arg)
+  (interactive "p")
+  (cond ((or (paredit-in-comment-p)
+             (paredit-in-string-p)) (kill-word (or arg 1)))
+        (t (kill-sexp (or arg 1)))))
+
+(defun live-paredit-backward-kill-sexp (&optional arg)
+  (interactive "p")
+  (cond ((or (paredit-in-comment-p)
+             (paredit-in-string-p)) (backward-kill-word (or arg 1)))
+        (t (backward-kill-sexp (or arg 1)))))
