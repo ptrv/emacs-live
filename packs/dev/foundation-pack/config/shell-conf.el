@@ -40,7 +40,7 @@
 ;; rotational ansi-terms
 
 (setq live-current-ansi-term nil)
-(setq live-ansi-terminal-path "/usr/local/bin/zsh")
+(setq live-ansi-terminal-path "/usr/bin/zsh")
 
 (defun live-ansi-term (program &optional new-buffer-name)
   "Start a terminal-emulator in a new buffer but don't switch to
