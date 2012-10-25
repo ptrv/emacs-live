@@ -190,4 +190,13 @@
 ;; "                                                      (live-welcome-message) "
 
 ")))
+
+(setq initial-scratch-message (concat ";;
+;; Emacs on " system-name " [" (symbol-name system-type) "]
+;;
+;; " (live-welcome-message) "
+
+"))
+
+)
 )
