@@ -82,6 +82,7 @@
 [submodule "packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu"]
         path = packs/dev/clojure-pack/vendor/submodules/nrepl-eval-sexp-fu
         url = git://github.com/samaaron/nrepl-eval-sexp-fu.git
+        ignore = untracked
 [submodule "packs/dev/clojure-pack/vendor/submodules/nrepl"]
         path = packs/dev/clojure-pack/vendor/submodules/nrepl
         url = git://github.com/samaaron/nrepl.el.git
@@ -91,12 +92,14 @@
 [submodule "packs/dev/clojure-pack/vendor/submodules/popup-el"]
         path = packs/dev/clojure-pack/vendor/submodules/popup-el
         url = git://github.com/auto-complete/popup-el.git
+        ignore = untracked
 [submodule "packs/dev/clojure-pack/vendor/submodules/fuzzy-el"]
         path = packs/dev/clojure-pack/vendor/submodules/fuzzy-el
         url = git://github.com/auto-complete/fuzzy-el.git
+        ignore = untracked
 [submodule "packs/dev/power-pack/vendor/submodules/browse-kill-ring"]
         path = packs/dev/power-pack/vendor/submodules/browse-kill-ring
         url = git://github.com/samaaron/browse-kill-ring.git
 [submodule "packs/dev/power-pack/vendor/submodules/expand-region"]
-	path = packs/dev/power-pack/vendor/submodules/expand-region
-	url = git://github.com/magnars/expand-region.el.git
+    path = packs/dev/power-pack/vendor/submodules/expand-region
+    url = git://github.com/magnars/expand-region.el.git
