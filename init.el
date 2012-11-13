@@ -204,3 +204,5 @@
 "))
 
 )
+
+(add-hook 'term-setup-hook 'zone)
