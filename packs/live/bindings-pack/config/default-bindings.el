@@ -91,7 +91,6 @@
 (define-key paredit-mode-map (kbd "C-M-f") 'live-paredit-forward)
 (define-key paredit-mode-map (kbd "M-q") 'live-paredit-reindent-defun)
 (define-key paredit-mode-map (kbd "M-d") 'live-paredit-forward-kill-sexp)
-(define-key paredit-mode-map (kbd "M-w") 'live-paredit-backward-kill-sexp)
 (define-key paredit-mode-map (kbd "M-k") 'live-paredit-backward-kill)
 (define-key paredit-mode-map (kbd "M-\\") 'live-paredit-delete-horizontal-space)
 
@@ -125,9 +124,6 @@
 ;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
-
-;;delete current word
-(global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
 
 ;;kill line backwards
 (global-set-key (kbd "M-k") 'live-backwards-kill-line)
