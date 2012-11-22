@@ -109,9 +109,12 @@
 [submodule "packs/dev/power-pack/vendor/submodules/ace-jump-mode"]
         path = packs/dev/power-pack/vendor/submodules/ace-jump-mode
         url = git://github.com/winterTTr/ace-jump-mode.git
+        ignore = untracked
 [submodule "packs/dev/foundation-pack/vendor/submodules/auto-compile"]
         path = packs/dev/foundation-pack/vendor/submodules/auto-compile
         url = git://github.com/tarsius/auto-compile.git
+        ignore = untracked
 [submodule "packs/dev/foundation-pack/vendor/submodules/packed"]
         path = packs/dev/foundation-pack/vendor/submodules/packed
         url = git://github.com/tarsius/packed.git
+        ignore = untracked
