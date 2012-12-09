@@ -1,3 +1,7 @@
+(when (and (= emacs-major-version 24)
+           (< emacs-minor-version 3))
+  (live-add-pack-lib "cl-lib-0.2"))
+
 (when (not (or (eq 'ms-dos system-type)
                (eq 'windows-nt system-type)))
   (live-load-config-file "auto-compile-conf.el"))
